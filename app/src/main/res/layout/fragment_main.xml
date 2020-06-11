@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scroll_teams">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/sports_header_layout" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycle_list_teams"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:src="@drawable/ic_sports_soccer_24px"
+        app:layout_anchor="@id/scroll_teams"
+        app:layout_anchorGravity="bottom|center"
+        android:tint="#000000"
+        app:borderWidth="0dp"
+        app:elevation="6dp"
+        app:layout_behavior="com.example.gamereminder.ui.ScrollAwareFABBehavior"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

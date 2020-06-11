@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Game Tracker</string>
+    <string name="welcome_title">Welcome to Game Tracker! \nPlease kick off the soccer to add your teams!</string>
+    <string name="search_team">Search Team</string>
+    <string name="team_detail">Team Detail</string>
+    <string name="team_game">Team Games</string>
+    <string name="search_team_hint">Search the team with keywords: </string>
+    <string name="no_game_found">Sorry, no game found at this session…</string>
+    <string name="dismiss_text">Dismiss</string>
+    <string name="cancel_text">Cancel</string>
+    <string name="add_to_watch_list">Add to My Watch List</string>
+    <string name="remove_from_watch_list">Remove from My Watch List</string>
+    <string name="past_games">Past Games</string>
+    <string name="future_games">Future Games</string>
+    <string name="delete">Delete</string>
+    <string name="confirm_add_title">Follow %1s</string>
+    <string name="confirm_add_body">Want to follow %1s and track their games?</string>
+    <string name="confirm_add_action">Follow</string>
+    <string name="confirm_remove_title">Unwatch %1s</string>
+    <string name="confirm_remove_body">Are you sure you won\'t watch on %1s anymore?</string>
+    <string name="confirm_remove_action">Unwatch</string>
+</resources>
