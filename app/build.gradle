@@ -13,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.gamereminder"
-        minSdkVersion 25
+        minSdkVersion 26
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -58,6 +58,8 @@ dependencies {
 
     implementation 'android.arch.persistence.room:runtime:1.1.1'
     kapt 'android.arch.persistence.room:compiler:1.1.1'
+
+    implementation 'androidx.work:work-runtime-ktx:2.3.4'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

@@ -12,7 +12,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ScrollAwareFABBehavior(context: Context?, attrs: AttributeSet?) :
     FloatingActionButton.Behavior(context, attrs) {
-    constructor() : this(null, null)
 
     override fun onStartNestedScroll(
         coordinatorLayout: CoordinatorLayout,

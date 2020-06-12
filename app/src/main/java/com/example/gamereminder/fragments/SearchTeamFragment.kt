@@ -73,6 +73,7 @@ class SearchTeamFragment: BaseFragment() {
         setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(p0: String?): Boolean {
                 viewModel.searchTeams(p0)
+                clearFocus()
                 return true
             }
 

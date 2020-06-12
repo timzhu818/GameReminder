@@ -15,13 +15,20 @@ class SearchTeamViewModel(private val remoteRepo: RemoteRepository) : BaseViewMo
 
     fun searchTeams(query: String?) {
         if (query == null) {
-            _errorMessage.value = "Sorry, please enter keyword for your team search..."
+            _errorMessage.value = "Sorry, please enter keyword for your team search…"
             return
         }
 
         executeTask {
             when(val result = remoteRepo.getTeams(query)) {
-                is Success -> _teamsList.postValue(result.r)
+                is Success -> {
+                    if (result.r?.isNotEmpty() == true) {
+                        _teamsList.postValue(result.r)
+                    } else {
+                        _errorMessage.postValue("Sorry we could not match up your search…")
+                    }
+
+                }
                 is Failure -> _errorMessage.postValue(result.l)
             }
         }

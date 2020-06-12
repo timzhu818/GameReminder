@@ -19,4 +19,6 @@
     <string name="confirm_remove_title">Unwatch %1s</string>
     <string name="confirm_remove_body">Are you sure you won\'t watch on %1s anymore?</string>
     <string name="confirm_remove_action">Unwatch</string>
+    <string name="remind_me">Remind Me</string>
+    <string name="remind_you">We will remind you before the game start!</string>
 </resources>

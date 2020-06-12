@@ -69,18 +69,17 @@
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toTopOf="@+id/name_away_team" />
 
-        <TextView
-            android:id="@+id/game_league"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:maxWidth="150dp"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:layout_marginEnd="12dp"
+        <Button
+            android:id="@+id/btn_remind_me"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="@string/remind_me"
+            android:textSize="12sp"
+            android:layout_marginEnd="5dp"
+            android:background="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.513" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

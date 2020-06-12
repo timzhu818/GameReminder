@@ -1,8 +1,6 @@
 package com.example.gamereminder.fragments
 
 import android.os.Bundle
-import android.util.Log
-import android.view.DragEvent
 import android.view.View
 import android.widget.TextView
 import androidx.core.os.bundleOf

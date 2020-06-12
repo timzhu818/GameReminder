@@ -43,5 +43,13 @@ class MainActivity : AppCompatActivity() {
         progressBar.visibility = if (show) VISIBLE else GONE
     }
 
+    override fun onBackPressed() {
+        if (findNavController(R.id.my_nav_host_fragment).currentDestination?.id == R.id.main_dest) {
+            finish()
+        } else {
+            super.onBackPressed()
+        }
+    }
+
 
 }

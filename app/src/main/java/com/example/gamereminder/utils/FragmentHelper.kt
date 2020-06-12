@@ -6,9 +6,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
 import com.example.gamereminder.R
 
-fun Fragment.navigationLeftToRight(id: Int, bundle: Bundle? = null, popId: Int? = null) {
+fun Fragment.navigationLeftToRight(id: Int, bundle: Bundle? = null) {
     val options = navOptions {
-        popId?.let { popUpTo = popId }
         anim {
             enter = R.anim.slide_in_right
             exit = R.anim.slide_out_left
@@ -19,9 +18,8 @@ fun Fragment.navigationLeftToRight(id: Int, bundle: Bundle? = null, popId: Int? 
     findNavController().navigate(id, bundle, options)
 }
 
-fun Fragment.navigationInAndOut(id: Int, bundle: Bundle? = null, popId: Int? = null) {
+fun Fragment.navigationInAndOut(id: Int, bundle: Bundle? = null) {
     val options = navOptions {
-        popId?.let { popUpTo = popId }
         anim {
             enter = R.anim.fade_in
             exit = R.anim.fade_out

@@ -3,10 +3,12 @@ package com.example.gamereminder.fragments
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.work.WorkManager
 import com.example.gamereminder.R
 import com.example.gamereminder.repositories.RemoteRepository
 import com.example.gamereminder.retrofit.Event
@@ -19,12 +21,15 @@ class FutureGamesFragment: BaseFragment() {
 
     private val futureGames: MutableList<Event?> = mutableListOf()
     private val gameAdapter by lazy {
-        GameAdapter(GameAdapter.PAST_GAME_TYPE, futureGames, requireContext())
+        GameAdapter(GameAdapter.PAST_GAME_TYPE, futureGames, requireContext()) {
+            viewModel.buildNotification(it)
+            Toast.makeText(requireContext(), getString(R.string.remind_you), Toast.LENGTH_LONG).show()
+        }
     }
     private lateinit var textTitle: TextView
 
     private val viewModel by lazy {
-        FutureGamesViewModel(requireArguments(), RemoteRepository())
+        FutureGamesViewModel(requireArguments(), RemoteRepository(), WorkManager.getInstance(requireContext()))
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
