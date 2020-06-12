@@ -15,6 +15,7 @@ class NotificationWorker(private val context: Context, params: WorkerParameters)
     override fun doWork(): Result {
 
         val mBuilder = NotificationCompat.Builder(context)
+            .setSmallIcon(android.R.drawable.stat_notify_more)
             .setContentTitle("Game starting soon!")
             .setContentText(inputData.getString(GAME_INFO))
 

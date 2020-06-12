@@ -10,7 +10,7 @@ interface RequestApi {
     suspend fun getTeams(@Query("t") team: String): Response<TeamsResponse>
 
     @GET("/api/v1/json/1/eventslast.php")
-    suspend fun getPastGames(@Query ("id") id: String): Response<EventsResponse>
+    suspend fun getPastGames(@Query ("id") id: String): Response<ResultsResponse>
 
     @GET("/api/v1/json/1/eventsnext.php")
     suspend fun getFutureGames(@Query ("id") id: String): Response<EventsResponse>

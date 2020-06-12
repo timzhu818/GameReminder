@@ -38,6 +38,9 @@ class PastGamesFragment: BaseFragment() {
             text = resources.getString(R.string.no_game_found)
             visibility = View.VISIBLE
         }
+        viewModel.showProgressBar.observe(viewLifecycleOwner, Observer {
+            showHideProgressBar(it)
+        })
         viewModel.pastGames.observe(viewLifecycleOwner, Observer {
             setUpListView(it)
         })

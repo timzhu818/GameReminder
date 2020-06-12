@@ -64,14 +64,12 @@ class GameAdapter(
         private val homeTeam = itemView.findViewById<TextView>(R.id.name_home_team)
         private val awayTeam = itemView.findViewById<TextView>(R.id.name_away_team)
         private val gameDate = itemView.findViewById<TextView>(R.id.game_date)
-        private val gameLeague = itemView.findViewById<TextView>(R.id.game_league)
         private val gameTime = itemView.findViewById<TextView>(R.id.game_time)
         private val btnRemind = itemView.findViewById<Button>(R.id.btn_remind_me)
         fun bind(event: Event?, listener: ((Event) -> Unit)?) {
             homeTeam.text = event?.strHomeTeam
             awayTeam.text = event?.strAwayTeam
             gameDate.text = event?.dateEvent
-            gameLeague.text = event?.strLeague
             gameTime.text = event?.strTime
             event?.let { e -> btnRemind.setOnClickListener { listener?.let { l -> l(e) } } }
         }

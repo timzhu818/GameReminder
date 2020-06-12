@@ -21,7 +21,7 @@ class FutureGamesFragment: BaseFragment() {
 
     private val futureGames: MutableList<Event?> = mutableListOf()
     private val gameAdapter by lazy {
-        GameAdapter(GameAdapter.PAST_GAME_TYPE, futureGames, requireContext()) {
+        GameAdapter(GameAdapter.FUTURE_GAME_TYPE, futureGames, requireContext()) {
             viewModel.buildNotification(it)
             Toast.makeText(requireContext(), getString(R.string.remind_you), Toast.LENGTH_LONG).show()
         }
@@ -43,6 +43,9 @@ class FutureGamesFragment: BaseFragment() {
             text = resources.getString(R.string.no_game_found)
             visibility = View.VISIBLE
         }
+        viewModel.showProgressBar.observe(viewLifecycleOwner, Observer {
+            showHideProgressBar(it)
+        })
         viewModel.futureGames.observe(viewLifecycleOwner, Observer {
             setUpListView(it)
         })

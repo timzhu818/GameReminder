@@ -28,7 +28,7 @@ class RemoteRepository {
         try {
             val response = client.getFutureGames(teamId)
             if (response.isSuccessful) {
-                Success(response.body()?.results)
+                Success(response.body()?.events)
             } else {
                 Failure(response.errorBody().toString())
             }
