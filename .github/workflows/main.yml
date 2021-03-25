@@ -1,9 +1,6 @@
 name: CI
 
-on:
-  pull_request:
-    branches:
-      - master
+on: push
 
 jobs:
   generate-dependency-graph:
@@ -19,9 +16,9 @@ jobs:
       - name: Generate Dependency Graph
         run: ./gradlew projectDependencyGraph
 
-      - name: Commmit
+      - name: Update
         run: |
           git config --local user.email 'action@github.com'
           git config --local user.name 'GitHub Action'
           git diff --quiet && git diff --staged --quiet || git commit -am 'Update dependency graph'
-          git push origin HEAD
+          git push
