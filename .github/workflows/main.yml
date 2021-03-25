@@ -24,5 +24,4 @@ jobs:
           git config --local user.email 'action@github.com'
           git config --local user.name 'GitHub Action'
           git diff --quiet && git diff --staged --quiet || git commit -am 'Update dependency graph'
-      - name: Push
-        run: git push origin [current-branch-name]
+          git push
